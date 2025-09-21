@@ -88,6 +88,7 @@ Item {
 
     KickoffListView {
         id: baseView
+	small: Plasmoid.configuration.smallRecents
 
         anchors.fill: parent
 

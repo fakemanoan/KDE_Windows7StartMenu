@@ -57,6 +57,10 @@
     <min>0</min>
     </entry>
 
+    <entry name="smallRecents" type="Bool">
+      <default>false</default>
+    </entry>
+
     <entry name="favoriteApps" type="StringList">
       <default></default>
     </entry>

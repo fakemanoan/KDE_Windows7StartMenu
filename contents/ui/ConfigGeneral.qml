@@ -60,6 +60,7 @@ KCM.SimpleKCM {
     property alias cfg_useExtraRunners: useExtraRunners.checked
 
     property alias cfg_numberRows: numberRows.value
+    property alias cfg_smallRecents: smallRecents.checked
     property alias cfg_orbWidth: orbWidth.value
 
     component CustomGroupBox: GroupBox {
@@ -191,8 +192,13 @@ KCM.SimpleKCM {
                     SpinBox{
                         id: numberRows
                         from: 0
-                        to: 15
+                        to: 30
                     }
+		}
+                CheckBox {
+                    id: smallRecents
+
+                    text: i18n("Use small icons for recents")
                 }
             }
         }

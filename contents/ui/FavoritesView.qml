@@ -180,6 +180,7 @@ Item {
     }
     KickoffListView {
         id: favoritesView
+	small: Plasmoid.configuration.smallRecents
 
         property bool animating: false
         property int animationDuration: resetAnimationDurationTimer.interval
