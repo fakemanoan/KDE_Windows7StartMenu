@@ -251,17 +251,49 @@ PlasmoidItem {
 
     Plasmoid.contextualActions: [
         PlasmaCore.Action {
-            text: i18n("Edit Applications...")
-            icon.name: "application-menu"
-            onTriggered:  menu_executable.exec("kstart kmenuedit");
+            text: i18n("Run")
+            icon.name: "system-run"
+            onTriggered: {
+                menu_executable.exec("krunner --replace");
+
+            }
+        },
+        PlasmaCore.Action {
+            text: i18n("File Manager")
+            icon.name: "folder"
+            onTriggered: {
+                Qt.callLater(Qt.openUrlExternally, "file:///.");
+
+            }
+        },
+        PlasmaCore.Action {
+            text: i18n("Settings")
+            icon.name: "preferences-system"
+            onTriggered: {
+                menu_executable.exec("systemsettings");
+
+            }
         },
         PlasmaCore.Action {
             text: i18n("Task Manager")
             icon.name: "ksysguardd"
             onTriggered: {
-                menu_executable.exec("kstart ksysguard");
+                menu_executable.exec("kstart plasma-systemmonitor");
 
             }
+        },
+        PlasmaCore.Action {
+            text: i18n("Console")
+            icon.name: "bash"
+            onTriggered: {
+                menu_executable.exec("konsole");
+
+            }
+        },
+        PlasmaCore.Action {
+            text: i18n("Edit Applications...")
+            icon.name: "application-menu"
+            onTriggered:  menu_executable.exec("kstart kmenuedit");
         }
     ]
 
